@@ -146,6 +146,153 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-LG3586" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-13 23:45:11" datetime="2019-03-13T15:45:11.000Z" itemprop="datePublished">2019-03-13</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Luogu/">Luogu</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/13/LG3586/">LG3586</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        使用SBT来求大于s的个数，和小于s的数的和  
+操作1：单点修改，若之前的数是正数，第一个树状数组-1，第二个树状数组$-$原来的数，若之后的数是正数，第一个树状数组+1，第二个树状数组+之后的数
+操作2：区间询问，先将大于s的个数求出来，再比较c-大于s的个数乘上c与剩余数之和，若前者大，...
+    
+
+        <a href="/2019/03/13/LG3586/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SBT/">SBT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/平衡树/">平衡树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-LG1351" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-13 23:42:10" datetime="2019-03-13T15:42:10.000Z" itemprop="datePublished">2019-03-13</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Luogu/">Luogu</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/13/LG1351/">LG1351</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        提供一个好思路
+首先共n个点,n-1条边，肯定为树，即没有环。那么距离为2，就是一个点连接的两个点，求联合权值即可。
+But:O(n^2) TLE
+那咋办？我们来优化一下。
+最大：
+一个点连接的两个权值最大的点，其联合权值再与ans1取max两个权值最大的点在输入的时候就搞定 O(n)
+
+和：...
+    
+
+        <a href="/2019/03/13/LG1351/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树的遍历/">树的遍历</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-LG1908" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-13 23:38:42" datetime="2019-03-13T15:38:42.000Z" itemprop="datePublished">2019-03-13</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Luogu/">Luogu</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/13/LG1908/">LG1908</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        其实就是求逆序对。而逆序对就是求每一个数前面有多少个比它大，则考虑权值线段树。什么是权值线段树？ 就是以数的大小作区间的线段树。然而，此题数据范围太大，所以需要一个小小的预处理操作：例：2 8 0 3 2，我们可以排个序（要保留原版）：0 2 2 3 8去重：0 2 3 8，编号为：1，2，3...
+    
+
+        <a href="/2019/03/13/LG1908/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模板/">模板</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线段树/">线段树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/逆序对/">逆序对</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-LG1401" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
