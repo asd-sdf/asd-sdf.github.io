@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>LG4899 | asd_a&#39;s Blog | Impossible is nothing!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="kruskal,线段树,dfs序">
+    <meta name="description" content="&amp;#x8FD9;&amp;#x9053;&amp;#x9898;&amp;#x4E09;&amp;#x4E2A;&amp;#x7528;&amp;#x4E3B;&amp;#x5E2D;&amp;#x6811;&amp;#x7684;&amp;#x7406;&amp;#x7531;&amp;#xFF1A;    &amp;#x89E3;&amp;#x9898;&amp;#x9700;&amp;#x6C42; &amp;#xFF08;&amp;#x5E9F;&amp;#x8BDD;&amp;#xFF09; &amp;#x590D;&amp;#x6742;&amp;#x5EA6;&amp;#">
+<meta name="keywords" content="kruskal,线段树,dfs序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LG4899">
+<meta property="og:url" content="http://tomotoes.com/posts/undefined/index.html">
+<meta property="og:site_name" content="asd_a&#39;s Blog">
+<meta property="og:description" content="&amp;#x8FD9;&amp;#x9053;&amp;#x9898;&amp;#x4E09;&amp;#x4E2A;&amp;#x7528;&amp;#x4E3B;&amp;#x5E2D;&amp;#x6811;&amp;#x7684;&amp;#x7406;&amp;#x7531;&amp;#xFF1A;    &amp;#x89E3;&amp;#x9898;&amp;#x9700;&amp;#x6C42; &amp;#xFF08;&amp;#x5E9F;&amp;#x8BDD;&amp;#xFF09; &amp;#x590D;&amp;#x6742;&amp;#x5EA6;&amp;#">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-11T13:13:20.919Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LG4899">
+<meta name="twitter:description" content="&amp;#x8FD9;&amp;#x9053;&amp;#x9898;&amp;#x4E09;&amp;#x4E2A;&amp;#x7528;&amp;#x4E3B;&amp;#x5E2D;&amp;#x6811;&amp;#x7684;&amp;#x7406;&amp;#x7531;&amp;#xFF1A;    &amp;#x89E3;&amp;#x9898;&amp;#x9700;&amp;#x6C42; &amp;#xFF08;&amp;#x5E9F;&amp;#x8BDD;&amp;#xFF09; &amp;#x590D;&amp;#x6742;&amp;#x5EA6;&amp;#">
+    
+    <link rel="shortcut icon" href="/img/103390.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/103390.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">asd_a</h5>
+          <a href="mailto:hjh.asd.a.36@gmail.com" title="hjh.asd.a.36@gmail.com" class="mail">hjh.asd.a.36@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/asd-sdf" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">LG4899</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">LG4899</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-10T15:11:16.000Z" itemprop="datePublished" class="page-time">
+  2019-03-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Luogu/">Luogu</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-LG4899" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">LG4899</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-10 23:11:16" datetime="2019-03-10T15:11:16.000Z" itemprop="datePublished">2019-03-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Luogu/">Luogu</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>&#x8FD9;&#x9053;&#x9898;&#x4E09;&#x4E2A;&#x7528;&#x4E3B;&#x5E2D;&#x6811;&#x7684;&#x7406;&#x7531;&#xFF1A;  </p>
+<ol>
+<li>&#x89E3;&#x9898;&#x9700;&#x6C42; <del>&#xFF08;&#x5E9F;&#x8BDD;&#xFF09;</del></li>
+<li>&#x590D;&#x6742;&#x5EA6;&#x5C0F; $O(nlogn)$</li>
+<li>&#x5F3A;&#x5236;&#x5728;&#x7EBF;  </li>
+</ol>
+<h2 id="Step1&#xFF1A;"><a href="#Step1&#xFF1A;" class="headerlink" title="Step1&#xFF1A;"></a>Step1&#xFF1A;</h2><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;kruskal&#x91CD;&#x6784;&#x4E24;&#x68F5;&#x6811;&#xFF1A;<br>A&#x6811;&#x975E;&#x6839;&#x8282;&#x70B9;&#x5927;&#x4E8E;&#x7236;&#x8282;&#x70B9;&#xFF0C;BB&#x6811;&#x975E;&#x6839;&#x8282;&#x70B9;&#x5C0F;&#x4E8E;&#x7236;&#x8282;&#x70B9;&#x3002;<br>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x8FD9;&#x4E24;&#x68F5;&#x6811;&#x6709;&#x4E00;&#x4E2A;&#x6027;&#x8D28;&#xFF1A;<br>&#x4E00;&#x4E2A;&#x5B50;&#x6811;&#x5185;&#x4EFB;&#x610F;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x4EC5;&#x901A;&#x8FC7;&#x5B50;&#x6811;&#x5185;&#x7684;&#x8282;&#x70B9;&#x5230;&#x8FBE;&#x5B50;&#x6811;&#x5185;&#x7684;&#x4EFB;&#x610F;&#x8282;&#x70B9;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x6811;&#x90FD;&#x662F;&#x8054;&#x901A;&#x7684;&#x4E14;&#x7F16;&#x53F7;&#x6EE1;&#x8DB3;&#x5806;&#x7684;&#x6027;&#x8D28;&#x3002;<br>&#x90A3;&#x4E48;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x73B0;&#x5728;A&#x6811;&#x4E2D;&#x627E;&#x5230;$S$&#xFF0C;&#x500D;&#x589E;&#x8DF3;&#x5230;$X$,&#x4F7F;$X&gt;=L,Fa_X&lt;L$<br>&#x5219;$S$&#x53EF;&#x4EE5;&#x53EA;&#x901A;&#x8FC7;&#x7F16;&#x53F7;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;$L$&#x7684;&#x70B9;&#x6240;&#x80FD;&#x5230;&#x7684;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x662F;$X$&#x7684;&#x5B50;&#x6811;&#x5185;&#x6240;&#x6709;&#x70B9;&#x7684;&#x96C6;&#x5408;,&#x4EE4;&#x4E3A;$Vs$&#x3002;<br>&#x540C;&#x7406;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;$T$&#x53EA;&#x7ECF;&#x8FC7;&#x7F16;&#x53F7;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;$R$&#x7684;&#x70B9;&#x6240;&#x80FD;&#x5230;&#x7684;&#x70B9;&#x7684;&#x96C6;&#x5408;$Vt$&#x3002;<br>&#x6C42;&#x662F;&#x5426;&#x6709;&#x89E3;&#x5373;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x662F;&#x5426;&#x516C;&#x5171;&#x70B9;&#x3002;</p>
+<h2 id="Step2&#xFF1A;"><a href="#Step2&#xFF1A;" class="headerlink" title="Step2&#xFF1A;"></a>Step2&#xFF1A;</h2><p>&#x5206;&#x522B;&#x5904;&#x7406;&#x51FA;A&#x6811;&#x548C;B&#x6811;&#x7684;dfs&#x5E8F;&#xFF1A;dfa,dfb.<br>$Vs$&#x7684;dfa&#x5728;$dfa_X$~$dfa_X+siz_X-1$<br>$Vt$&#x7684;dfb&#x5728;$dfb_Y$~$dfa_Y+siz_Y-1$<br>&#x5EFA;&#x7ACB;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x6309;dfa&#x6392;&#x5E8F;&#xFF0C;&#x4EE5;dfb&#x4E3A;&#x6743;&#x503C;&#x5EFA;&#x7ACB;&#x4E3B;&#x5E2D;&#x6811;<br>&#x67E5;&#x8BE2;$dfa_X$~$dfa_X+siz_X-1$&#x7684;&#x4E3B;&#x5E2D;&#x6811;&#x4E2D;&#x503C;&#x5728;<br>$dfb_Y$~$dfa_Y+siz_Y-1$&#x4E4B;&#x95F4;&#x7684;&#x4E2A;&#x6570;&#x3002;<br>&#x82E5;&#x4E3A;0&#x5219;&#x8F93;&#x51FA;0&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA;1.<br>&#x89E3;&#x6BD5;&#x3002;  </p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">8e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> T=N&lt;&lt;<span class="number">4</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,q,fi[N],ne[N],to[N],tot;</span><br><span class="line"><span class="keyword">int</span> dfa[N],dfb[N],sia[N],sib[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>{ne[++tot]=fi[x];to[tot]=y;fi[x]=tot;}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ad</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>{add(x,y);add(y,x);}</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">kruskal</span>{</span></span><br><span class="line">    <span class="keyword">int</span> type,fk[N],nk[N],tk[N],tok;</span><br><span class="line">    <span class="keyword">int</span> fa[N],jp[N][<span class="number">20</span>],rt,dfn[N],cnt,siz[N];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">adk</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>{nk[++tok]=fk[x];tk[tok]=y;fk[x]=tok;}</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fd</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">if</span>(x!=fa[x])fa[x]=fd(fa[x]);</span><br><span class="line">        <span class="keyword">return</span> fa[x];</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        dfn[x]=++cnt;siz[x]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=fk[x];i;i=nk[i])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> y=tk[i];</span><br><span class="line">            jp[y][<span class="number">0</span>]=x;</span><br><span class="line">            dfs(y);</span><br><span class="line">            siz[x]+=siz[y];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)fa[i]=i;</span><br><span class="line">        <span class="keyword">if</span>(type==<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> x=n;x;x--)</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=fi[x];i;i=ne[i])</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">int</span> y=to[i];</span><br><span class="line">                    <span class="keyword">if</span>(y&gt;x)</span><br><span class="line">                    {</span><br><span class="line">                        <span class="keyword">int</span> fx=fd(x),fy=fd(y);</span><br><span class="line">                        <span class="keyword">if</span>(fx==fy)<span class="keyword">continue</span>;</span><br><span class="line">                        fa[fy]=fx;</span><br><span class="line">                        adk(fx,fy);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;=n;x++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=fi[x];i;i=ne[i])</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">int</span> y=to[i];</span><br><span class="line">                    <span class="keyword">if</span>(y&lt;x)</span><br><span class="line">                    {</span><br><span class="line">                        <span class="keyword">int</span> fx=fd(x),fy=fd(y);</span><br><span class="line">                        <span class="keyword">if</span>(fx==fy)<span class="keyword">continue</span>;</span><br><span class="line">                        fa[fy]=fx;</span><br><span class="line">                        adk(fx,fy);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">        cnt=<span class="number">0</span>;</span><br><span class="line">        rt=fd(<span class="number">1</span>);</span><br><span class="line">        dfs(rt);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">18</span>;j++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">                jp[i][j]=jp[jp[i][j<span class="number">-1</span>]][j<span class="number">-1</span>];</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">18</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(type==<span class="number">1</span>)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span>(jp[x][i]&gt;=y)</span><br><span class="line">                    x=jp[x][i];</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span>(jp[x][i]&lt;=y &amp;&amp; jp[x][i])</span><br><span class="line">                    x=jp[x][i];</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    }</span><br><span class="line">}A,B;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DFN</span>{</span></span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">}ss[N];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(DFN x,DFN y)</span></span>{<span class="keyword">return</span> x.a&lt;y.a;}</span><br><span class="line"><span class="keyword">int</span> ls[T],rs[T],tr[T],rt[N],t_cnt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> pre,<span class="keyword">int</span> &amp;now,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    now=++t_cnt;tr[now]=tr[pre]+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(l==r)<span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=mid)</span><br><span class="line">    {</span><br><span class="line">        rs[now]=rs[pre];</span><br><span class="line">        build(ls[pre],ls[now],l,mid,x);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        ls[now]=ls[pre];</span><br><span class="line">        build(rs[pre],rs[now],mid+<span class="number">1</span>,r,x);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> now1,<span class="keyword">int</span> now2,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(L&lt;=l &amp;&amp; R&gt;=r)</span><br><span class="line">        <span class="keyword">return</span> tr[now2]-tr[now1];</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>,anss=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(L&lt;=mid)anss+=query(ls[now1],ls[now2],l,mid,L,R);</span><br><span class="line">    <span class="keyword">if</span>(R&gt;mid)anss+=query(rs[now1],rs[now2],mid+<span class="number">1</span>,r,L,R);</span><br><span class="line">    <span class="keyword">return</span> anss;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;q);</span><br><span class="line">    <span class="keyword">int</span> x,y,z,v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">        ad(x+<span class="number">1</span>,y+<span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line">    A.type=<span class="number">1</span>;</span><br><span class="line">    A.build();</span><br><span class="line">    B.type=<span class="number">0</span>;</span><br><span class="line">    B.build();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {</span><br><span class="line">        dfa[i]=A.dfn[i];sia[i]=A.siz[i];</span><br><span class="line">        dfb[i]=B.dfn[i];sib[i]=B.siz[i];</span><br><span class="line">        ss[i].a=dfa[i];</span><br><span class="line">        ss[i].b=dfb[i];</span><br><span class="line">    }</span><br><span class="line">    sort(ss+<span class="number">1</span>,ss+n+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        build(rt[i<span class="number">-1</span>],rt[i],<span class="number">1</span>,n,ss[i].b);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;x,&amp;y,&amp;z,&amp;v);</span><br><span class="line">        x++;y++;z++;v++;</span><br><span class="line">        x=A.lca(x,z);</span><br><span class="line">        y=B.lca(y,v);</span><br><span class="line">        <span class="keyword">if</span>(query(rt[dfa[x]<span class="number">-1</span>],rt[dfa[x]+sia[x]<span class="number">-1</span>],<span class="number">1</span>,n,dfb[y],dfb[y]+sib[y]<span class="number">-1</span>))</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-11T13:13:20.919Z" itemprop="dateUpdated">2019-03-11 21:13:20</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://tomotoes.com">
+            <img src="/img/103390.jpg" alt="asd_a">
+            asd_a
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs序/">dfs序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kruskal/">kruskal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线段树/">线段树</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tomotoes.com/posts/undefined/&title=《LG4899》 — asd_a's Blog&pic=http://tomotoes.com/img/103390.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tomotoes.com/posts/undefined/&title=《LG4899》 — asd_a's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tomotoes.com/posts/undefined/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LG4899》 — asd_a's Blog&url=http://tomotoes.com/posts/undefined/&via=http://tomotoes.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tomotoes.com/posts/undefined/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/undefined/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">LG1401</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "Kt0FFchxQXeKVumE0dcO1MDH-gzGzoHsz",
+            appKey: "JeXoTzPJej0lIPmHnR9ayIdr",
+            avatar: "mm",
+            placeholder: " ",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>asd_a &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tomotoes.com/posts/undefined/&title=《LG4899》 — asd_a's Blog&pic=http://tomotoes.com/img/103390.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tomotoes.com/posts/undefined/&title=《LG4899》 — asd_a's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tomotoes.com/posts/undefined/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LG4899》 — asd_a's Blog&url=http://tomotoes.com/posts/undefined/&via=http://tomotoes.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tomotoes.com/posts/undefined/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABy0lEQVR42u3ay27jMBAEwPz/T3uvCwQSuoePTRbFkyHLUtGHwbDJr694fB7G399+v//7b5+ubB64uLjL3M/reHr903Pen59M6cmAi4t7n/v++vdpJNCktEV/AS4u7i/hzqC4uLj/BzdZlSQtDi4u7m/hJoufpLlpy9zBtRouLu4CN08pz30+ku/i4uKOuJ+to51w/XxcXNwr3LbotC1LW4Wip+Hi4h7m5gVoVqr2Rie4uLh3uCuveY9Fkm/b8BQXF/cmN2G1i5ZZvFIHKLi4uAe460es2nuWmiRcXNyL3CTOaA9qJOUvb5hwcXFvcleOSbUT21YKcXFxr3BXAtP2ehugDIMSXFzcBW6eneRFKs82ky3YouLi4uJu5eYlZr1SJoFpdE4EFxf3GLftd5KAdddBz2K3BxcXdys3Lz2zI1x5sSsWP7i4uIe5K1utuwKUeiGEi4t7mDtrR5IwZdYMRb0YLi7uYe5s7zIJTJODFO39uLi4N7mz4pVcT6bUFkpcXNyb3Hzbo92gbeOVYb6Li4v7j7ht2dpV8nBxcX8yNw9J19um+vgFLi7uAW7+6FnQ2W64blur4eLijrjtUqQ9mrkelAzzXVxc3An3D+C8yC+vUk46AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
