@@ -173,7 +173,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        &#x7F51;&#x8DEF;&#x6D41;&#x4E3A;&#x5565;&#x8981;&#x4E8C;&#x5206;&#xFF1F;&#xFF1F;&#xFF1F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8FB9;&#x6309;&#x...
+        网路流为啥要二分？？？我们可以将边按边权排序，然后从1开始枚举验证。此处就不讲怎么建图了，（将容量设为一即可）
+问题来了：此时时间复杂度：$O(nm^2)$?
+错了我们不必重新建图，然后重新跑dinic我们可以利用上一次dinic所剩下的残余网络在里面加新增的边，直接跑dinic，求出新增的路...
     
 
         <a href="/" class="post-more waves-effect waves-button">
@@ -219,9 +221,13 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        &#x8FD9;&#x9053;&#x9898;&#x4E09;&#x4E2A;&#x7528;&#x4E3B;&#x5E2D;&#x6811;&#x7684;&#x7406;&#x7531;&#xFF1A;  
+        这道题三个用主席树的理由：  
 
-&#x89E3;&#x9898;&#x9700;&#x6C42; &#xFF0...
+解题需求 （废话）
+复杂度小 $O(nlogn)$
+强制在线  
+
+Step1：我们可以先kruskal重构两棵树：A树非根节点大于父节点，BB树非根节点小于父节点。我们发现这两棵树有一个性质：一个子树内任意节点可以仅通过子树内的节点到达子树内的任意节点，也就...
     
 
         <a href="/" class="post-more waves-effect waves-button">
