@@ -33,9 +33,9 @@
         <category>Luogu</category>
       </categories>
       <tags>
-        <tag>模板</tag>
-        <tag>逆序对</tag>
         <tag>线段树</tag>
+        <tag>逆序对</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
@@ -46,9 +46,9 @@
         <category>Luogu</category>
       </categories>
       <tags>
+        <tag>模板</tag>
         <tag>网络流</tag>
         <tag>残余网络</tag>
-        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
@@ -59,8 +59,8 @@
         <category>Luogu</category>
       </categories>
       <tags>
-        <tag>线段树</tag>
         <tag>kruskal</tag>
+        <tag>线段树</tag>
         <tag>dfs序</tag>
       </tags>
   </entry>
